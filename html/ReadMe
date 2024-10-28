@@ -1,0 +1,4 @@
+Para ejecutar cualquier plantilla debes hacerlo accediendo desde el php (twig), ya que este es el que accede a la plantilla HTML (ej: http://localhost/twig_test1.php)
+Si no te carga elimina la caché guardada en la carpeta
+
+Instalar phpMyAdmin

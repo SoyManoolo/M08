@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ titulo }}</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+	</head>
+	<body>
+		<div class="d-flex align-items-center justify-content-center border">
+			<h1 class="text-center">{{ name }}'s info! {{ emoji }}</h1>
+		</div>
+		<hr>
+
+		<p class="fw-bold">{{ social_network }}: <a href="https://{{ social_link }}" target="_blank">{{ social_link }}</a></p>
+
+		<h2 class="text-danger">Education</h2>
+		<ul class="list-group">
+			{% for edu in education %}
+			<li class="list-group-item list-group-item-action">
+				<span class="fw-bold">{{ edu.degree }}</span>
+				{{ edu.institution }} ({{ edu.year }})
+			</li>
+			{% endfor %}
+		</ul>
+		<h2 class="text-primary">Work Experience</h2>
+		<ul class="list-group">
+			{% for work in work_experience %}
+			<li class="list-group-item list-group-item-action" type="button">
+				<span class="fw-bold">{{ work.role }}</span>
+				({{ work.year }})
+			</li>
+			{% endfor %}
+		</ul>
+		<h2 class="text-warning">Learning</h2>
+		<ol class="list-group list-group-numbered">
+			{% for learn in learning %}
+			<li class="list-group-item">
+				<span class="fw-bold">{{ learn.language }}</span>
+			</li>
+			{% endfor %}
+		</ol>
+
+		<div class="alert alert-success text-center" role="alert">
+			{{ emoji }} {{ emoji }} {{ emoji }} {{ emoji }} 
+		</div>
+	</body>
+</html>
